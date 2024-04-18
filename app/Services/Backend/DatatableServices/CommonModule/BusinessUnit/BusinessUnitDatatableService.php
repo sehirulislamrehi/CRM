@@ -1,0 +1,40 @@
+<?php
+
+namespace App\Services\Backend\DatatableServices\CommonModule\BusinessUnit;
+
+use App\Models\Backend\CommonModule\BusinessUnit;
+use Yajra\DataTables\Facades\DataTables;
+
+class BusinessUnitDatatableService
+{
+    public function getBusinessUnitData($data): \Illuminate\Http\JsonResponse
+    {
+        return DataTables::of($data)
+            ->rawColumns(['is_active', 'action'])
+            ->addIndexColumn()
+            ->editColumn('is_active', function (BusinessUnit $bu) {
+                if ($bu->is_active) {
+                    return '<span class="badge badge-success">active</span>';
+                } else {
+                    return '<span class="badge badge-danger">inactive</span>';
+                }
+            })
+            ->editColumn('created_at', function (BusinessUnit $bu) {
+                return $bu->created_at->format('Y-m-d H:i:s');;
+            })
+            ->editColumn('updated_at', function (BusinessUnit $bu) {
+                return $bu->updated_at->format('Y-m-d H:i:s');;
+            })
+            ->addColumn('action', function (BusinessUnit $bu) {
+                return '<a class="btn-block btn-sm"
+                            data-content="' . route('admin.common-module.bu.modal.update', ['id' => $bu->id]) . '"
+                            data-target="#myModal"
+                            class="btn btn-outline-dark"
+                            data-toggle="modal"
+                            style="cursor: pointer;">
+                                <i class="fas fa-edit"></i>Edit
+                        </a>';
+            })
+            ->make(true);
+    }
+}

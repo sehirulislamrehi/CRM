@@ -1,0 +1,59 @@
+.btn-primary,
+.btn-outline-primary {
+    background-color: #A288A6;
+    border: none;
+}
+
+.btn-outline-primary:hover {
+    background-color: #A288A6;
+    border: none;
+}
+
+.btn-outline-primary{
+    color:white;
+}
+
+.main-sidebar {
+    background-color: #1C1D21;
+}
+
+[class*="sidebar-dark-"] .nav-treeview > .nav-item > .nav-link.active, [class*="sidebar-dark-"] .nav-treeview > .nav-item > .nav-link.active:hover, [class*="sidebar-dark-"] .nav-treeview > .nav-item > .nav-link.active:focus {
+    background-color: #A288A6;
+    color: #ffffff;
+}
+
+.select2-container--default .select2-purple .select2-selection--multiple .select2-selection__choice, .select2-purple .select2-container--default .select2-selection--multiple .select2-selection__choice {
+    background-color: #A288A6;
+    border-color: #A288A6;
+    color: #fff;
+}
+
+.card{
+    padding: 3px;
+    border-radius: 8px;
+}
+
+.modal-content{
+    padding: 3px;
+    border-radius: 8px;
+}
+
+.btn{
+    padding: 5px 10px;
+    border-radius: 8px;
+}
+.info-box{
+    padding: 5px 10px;
+    border-radius: 15px;
+}
+.info-box-icon.elevation-1{
+    border-radius: 50%;
+}
+input[type="search"]{
+    padding: 10px 15px;
+    border-radius: 5px;
+}
+
+.nav.nav-pills.nav-sidebar.flex-column{
+    margin-top: 1rem;
+}
